@@ -9,7 +9,7 @@ export default async function fetchFriendActivity() {
         const { accessToken } = await buddyList.getWebAccessToken(spDcCookie)
         const friendActivity = await buddyList.getFriendActivity(accessToken)
         
-        return friendActivity.friends.sort((a:SpotifyResponse, b:SpotifyResponse) => b.timestamp - a.timestamp) as SpotifyResponse
+        return friendActivity.friends.sort((a:SpotifyResponse, b:SpotifyResponse) => b.timestamp - a.timestamp) as SpotifyResponse[]
     } catch (error) {
         console.log('Error fetching friend activity', error)
     } 

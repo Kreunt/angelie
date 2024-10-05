@@ -13,7 +13,7 @@ export function convertFriendActivity(friendActivity: SpotifyResponse[]) : Frien
     if (!friendActivity) {
         return [];
     }
-    console.log('here', friendActivity)
+    
     return friendActivity.map((activity) => {
         return {
             id: activity.user.uri,
