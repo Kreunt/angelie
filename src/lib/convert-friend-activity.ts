@@ -18,8 +18,9 @@ export function convertFriendActivity(friendActivity: SpotifyResponse[]) : Frien
         return {
             id: activity.user.uri,
             name: activity.user.name,
-            listening: activity.track.name,
+            listening: `${activity.track.name} by ${activity.track.artist.name}`,
             listeningAgo: getTimeAgo(activity.timestamp),
+            ppUrl: activity.user.imageUrl,
         }
     })
 }

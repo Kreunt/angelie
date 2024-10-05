@@ -9,6 +9,7 @@ import { Button } from "./ui/button";
 import { ChevronRightIcon } from "lucide-react";
 import { FaceIcon } from "@radix-ui/react-icons";
 import { Friend } from "@/types/friend";
+import photo from '../../public/avatars/0.png';
 
 
 export default function FriendRow({ friend }: { friend: Friend }) {
@@ -16,11 +17,13 @@ export default function FriendRow({ friend }: { friend: Friend }) {
         <Card className="mb-4">
             <CardHeader className="flex-row items-center gap-2">
                 <Image
-                    src={`/avatars/${friend.id}.png`}
+                    src={friend.ppUrl || photo}
                     alt={`${friend.name}'s profile`}
                     className="rounded-full mr-4"
-                    width={40}
-                    height={40}
+                    unoptimized
+                    width={50}
+                    height={50}
+                    quality={100}
                 />
                 <div className="flex row w-[100%]">
                     <div className="flex-column w-[50%]">

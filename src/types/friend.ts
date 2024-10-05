@@ -3,4 +3,5 @@ export type Friend = {
     name: string;
     listening: string;
     listeningAgo: string;
+    ppUrl?: string;
 }

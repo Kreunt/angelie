@@ -20,6 +20,7 @@
     "react-dom": "^18",
     "spotify-buddylist": "^1.0.0",
     "spotify-web-api-node": "^5.0.2",
+    "swr": "^2.2.5",
     "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7"
   },
