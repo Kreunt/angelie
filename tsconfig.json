@@ -18,9 +18,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@types/*": ["./src/types/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/_app.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/_app.js", "src/lib/fetch-friend-activity.ts"],
   "exclude": ["node_modules"]
 }

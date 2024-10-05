@@ -8,13 +8,8 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { ChevronRightIcon } from "lucide-react";
 import { FaceIcon } from "@radix-ui/react-icons";
+import { Friend } from "@/types/friend";
 
-interface Friend {
-    id: number;
-    name: string;
-    listening: string;
-    listeningAgo: string;
-}
 
 export default function FriendRow({ friend }: { friend: Friend }) {
     return (
