@@ -14,7 +14,7 @@ import photo from '../../public/avatars/0.png';
 
 export default function FriendRow({ friend }: { friend: Friend }) {
     return (
-        <Card className="mb-4">
+        <Card className="mb-4 dark ">
             <CardHeader className="flex-row items-center gap-2">
                 <Image
                     src={friend.ppUrl || photo}
