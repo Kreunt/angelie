@@ -7,6 +7,8 @@ import fetchFriendActivity from '@/lib/fetch-friend-activity';
 import { SpotifyResponse } from '@/types/spotify';
 import { Friend } from '@/types/friend';
 import { convertFriendActivity } from '@/lib/convert-friend-activity';
+import { Reorder } from "framer-motion"
+import { useRouter } from 'next/router';
 
 export async function getStaticProps() {
     const friendActivity = await fetchFriendActivity();
@@ -18,7 +20,21 @@ export async function getStaticProps() {
 }
 
 export default function FriendList({ friendActivity }: { friendActivity: SpotifyResponse[] }) {
+    const router = useRouter();
     const [friends, setFriends] = React.useState<Friend[]>([]);
+
+    const refreshData = () => {
+        router.replace(router.asPath);
+    }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            refreshData();
+            console.log('Table Updated');
+        }, 15000)
+        return () => clearInterval(interval);
+    })
+
     useEffect(() => {
         setFriends(convertFriendActivity(friendActivity));
     }, [friendActivity]);
@@ -28,9 +44,11 @@ export default function FriendList({ friendActivity }: { friendActivity: Spotify
                 <title>Friend List</title>
             </Head>
             <ScrollArea className="flex-column">
-                {friends.map((friend) => (
-                    <FriendRow key={friend.id} friend={friend} />
-                ))}
+                <Reorder.Group axis="y" values={friends} onReorder={setFriends}>
+                    {friends.map((friend) => (
+                        <FriendRow key={friend.id} friend={friend} />
+                    ))}
+                </Reorder.Group>
             </ScrollArea>
         </Layout>
     );
