@@ -1,10 +1,11 @@
 import { SpotifyResponse } from "@/types/spotify"
 
 const buddyList = require('spotify-buddylist')
+interface Props {
+    spDcCookie: string
+}
 
-export default async function fetchFriendActivity() {
-    const spDcCookie = 'sp_dc token here'
-    
+export default async function fetchFriendActivity({ spDcCookie }: Props) {
     try {
         const { accessToken } = await buddyList.getWebAccessToken(spDcCookie)
         const friendActivity = await buddyList.getFriendActivity(accessToken)

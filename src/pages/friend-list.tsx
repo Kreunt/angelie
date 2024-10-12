@@ -10,8 +10,9 @@ import { convertFriendActivity } from '@/lib/convert-friend-activity';
 import { Reorder } from "framer-motion"
 import { useRouter } from 'next/router';
 
-export async function getStaticProps() {
-    const friendActivity = await fetchFriendActivity();
+export async function getServerSideProps(context: any) {
+    const spdc = context.req.cookies['sp_dc'];
+    const friendActivity = await fetchFriendActivity({ spDcCookie: spdc });
     return {
         props: {
             friendActivity,

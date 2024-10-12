@@ -1,20 +1,16 @@
-import Link from 'next/link';
-import { Button } from "@/components/ui/button"
 import '../styles/globals.css';
-
-
-
+import Layout from '@/components/layout';
+import LoginForm from '@/components/LoginForm';
 export const metadata = {
   title: 'Angelie',
   description: 'Angelie start page',
 }
 
 export default function Home() {
+
   return (
-    <div>
-      <Button asChild>
-        <Link href="/friend-list">Go to Friend List</Link>
-      </Button>
-    </div>
+    <Layout>
+      <LoginForm />
+    </Layout>
   );
 }
