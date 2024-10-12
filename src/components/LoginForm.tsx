@@ -5,9 +5,15 @@ import { Input } from './ui/input';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import { KeyIcon } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const LoginForm: React.FC = () => {
     const [spdc, setSpdc] = useState('');
+    const router = useRouter();
+
+    if (document.cookie.includes('sp_dc')) {
+        router.push('/friend-list');
+    }
     return (
         <Card className="flex flex-col items-center justify-center dark p-5 gap-4">
             <div>
