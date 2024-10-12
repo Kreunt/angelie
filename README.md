@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is Angelie, a web application that allows users to interact with their Spotify friends. For now, you can see what songs they are listening to, but in the future, you will be able to react to them with emojis and even send them messages! 
 
-## Getting Started
+For the time being, Angelie needs a key to fetch your friend list. You can get one by logging in to your Spotify account on web. Learn more about this process at the section [Getting the Key](#getting-the-Key).
 
-First, run the development server:
+Angelie does not store any of your data on any remote server. All data is stored locally in your browser. In the [#Roadmap](#roadmap) section, you can see what I plan to add in the future.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## [Getting the Key](#getting-the-Key)
+<a id="getting-the-Key"></a>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Log in to your [Spotify account on web](https://open.spotify.com) and navigate to Dev Tools using F12 and go to Application Tab. It might be hidden under the hamburger menu as in the screenshot below
+   ![Dev Tools](https://i.imgur.com/ySir4VC.png)
+2. On the left, under cookies, select the spotify.com domain and copy the value of sp_dc
+    ![Cookies](https://i.imgur.com/AVA6R3J.png)
+3. Go to [Angelie](https://angelie.vercel.app) and paste the value in the field and click 'Login using sp_dc cookie'
+    ![Login](https://i.imgur.com/WQ3L5Qa.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+You can now see your friends' listening activity! This key will be saved on your device and will never be shared with anyone.
 
-## Learn More
+## Roadmap
+<a id="roadmap"></a>
 
-To learn more about Next.js, take a look at the following resources:
+- [ ] Implement Login using Spotify OAuth: Allow users to log in to Angelie using their Spotify accounts for added security and convenience.
+- [ ] Add emojis to react to songs
+- [ ] Add a chat feature to send messages to your friends
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
+Angelie is built using Next.js and TypeScript. Styling is done using Tailwind CSS and Shadcn UI. The app is hosted on Vercel. As this is a personal project, partly for learning purposes, any suggestion to improve the code is welcome!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
+Angelie is licensed under the MIT License. See the LICENSE file for details.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contact
+If you have any questions or feedback, feel free to contact me [here](mailto:kreuntact@hotmail.com).
