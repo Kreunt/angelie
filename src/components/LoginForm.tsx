@@ -11,7 +11,7 @@ const LoginForm: React.FC = () => {
     const [spdc, setSpdc] = useState('');
     const router = useRouter();
 
-    if (document.cookie.includes('sp_dc')) {
+    if (typeof document !== 'undefined' && document.cookie.includes('sp_dc')) {
         router.push('/friend-list');
     }
     return (
