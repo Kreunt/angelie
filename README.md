@@ -1,6 +1,6 @@
 This is Angelie, a web application that allows users to interact with their Spotify friends. For now, you can see what songs they are listening to, but in the future, you will be able to react to them with emojis and even send them messages! 
 
-For the time being, Angelie needs a key to fetch your friend list. You can get one by logging in to your Spotify account on web. Learn more about this process at the section ['Getting the Key'](#getting-the-Key).
+For the time being, Angelie needs a key to fetch your friend list. You can get one by logging in to your Spotify account on web. Learn more about this process at the section [Getting the Key](#getting-the-Key).
 
 Angelie does not store any of your data on any remote server. All data is stored locally in your browser. In the [Roadmap](#roadmap) section, you can see what I plan to add in the future.
 
